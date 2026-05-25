@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "JOI Delivery - Cart & Inventory API",
+    "_postman_id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Inventory Health Check",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/inventory/health?storeId=STORE_1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["inventory", "health"],
+          "query": [
+            {
+              "key": "storeId",
+              "value": "STORE_1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Product to Cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"userId\": \"USER_1\",\n  \"productId\": \"PROD_101\",\n  \"quantity\": 2\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/cart/product",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["cart", "product"]
+        }
+      }
+    },
+    {
+      "name": "View Cart",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/cart/view?userId=USER_1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["cart", "view"],
+          "query": [
+            {
+              "key": "userId",
+              "value": "USER_1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
